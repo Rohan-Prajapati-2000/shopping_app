@@ -1,0 +1,64 @@
+name: shoping_app
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  iconsax: ^0.0.8
+  cupertino_icons: ^1.0.2
+
+
+
+
+# State Management
+  get: ^4.6.5
+  get_storage: ^2.1.1
+  http: ^1.2.0
+  intl: ^0.19.0
+  logger: ^2.1.0
+  url_launcher: ^6.2.5
+  flutter_native_splash: ^2.3.11
+  smooth_page_indicator: ^1.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/logos/
+    - assets/icons/
+    - assets/images/
+    - assets/images/on_boarding_images/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+#          width: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+#          width: 400
+        - asset: assets/fonts/Poppins-Italic.ttf
+#          width: Italic
+        - asset: assets/fonts/Poppins-Medium.ttf
+#          width: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+#          width: 500
+#          style: italic
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+#          width: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+#          width: 800
