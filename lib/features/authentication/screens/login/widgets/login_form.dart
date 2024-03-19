@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shoping_app/features/authentication/screens/password_configuration/forget_password.dart';
+import 'package:shoping_app/features/authentication/screens/signup/signup.dart';
+import 'package:shoping_app/navigation_menu.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/constants/text_strings.dart';
 
@@ -58,7 +62,7 @@ class _SLoginFormState extends State<SLoginForm> {
                 ),
 
                 /// Forget Password
-                TextButton(onPressed: () {}, child: Text(SText.forgetPassword)),
+                TextButton(onPressed: () => Get.to(()=> ForgetPassword()), child: Text(SText.forgetPassword)),
               ],
             ),
             SizedBox(height: SSizes.spaceBtwSections),
@@ -67,14 +71,14 @@ class _SLoginFormState extends State<SLoginForm> {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: Text(SText.signIn))),
+                    onPressed: () => Get.to(()=> NavigationMenu()), child: Text(SText.signIn))),
             SizedBox(height: SSizes.spaceBtwItems),
 
             /// create account button
             SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                    onPressed: () {}, child: Text(SText.createAccount)))
+                    onPressed: () => Get.to(() => SignupScreen()), child: Text(SText.createAccount)))
           ],
         ),
       ),

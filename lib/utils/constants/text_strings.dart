@@ -36,6 +36,12 @@ class SText{
   static const String resendEmail = "Resent Email";
   static const String resendEmailIn = "Resent email in";
 
+
+  static const String submit = "Submit";
+  static const String done = "Done";
+  static const String scontinue = "Continue";
+
+
   // Authentication Heading Text
   static const String loginTitle = "Welcome Back,";
   static const String loginSubTitle = "Discover Limited Choices and Unmatched Convenience";
