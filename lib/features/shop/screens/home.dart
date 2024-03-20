@@ -1,9 +1,18 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/circular_container.dart';
-import 'package:shoping_app/common/widgets/custom_shape/curved_edges/curved_edge_widget.dart';
+import 'package:shoping_app/common/widgets/custom_shape/containers/search_container.dart';
+import 'package:shoping_app/common/widgets/custom_shape/curved_edges/primary_header_container.dart';
+import 'package:shoping_app/common/widgets/images/s_rounded_image.dart';
+import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/shop/screens/widgets/home_appbar.dart';
+import 'package:shoping_app/features/shop/screens/widgets/home_categories.dart';
+import 'package:shoping_app/features/shop/screens/widgets/promo_slider.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
+import 'package:shoping_app/utils/constants/image_strings.dart';
+import 'package:shoping_app/utils/constants/sizes.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
@@ -12,21 +21,35 @@ class HomeScreen extends StatelessWidget{
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SCurvedEdgeWidget(
-              child: Container(
-                color: SColors.primaryColor,
-                padding: EdgeInsets.all(0),
-                child: SizedBox(
-                  height: 400,
-                  child: Stack(
-                    children: [
-                      Positioned(top: -150, right: -250 ,child: SCircularWidgete(backgroundColor: SColors.textWhite.withOpacity(0.1))),
-                      Positioned(top: 100, right: -300 ,child: SCircularWidgete(backgroundColor: SColors.textWhite.withOpacity(0.1))),
-                      Positioned(child: SCircularWidgete(backgroundColor: SColors.textWhite.withOpacity(0.0))),
-                    ],
-                  ),
-                ),
+            /// This is HEADER in BLUE Parts
+            SPrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  /// AppBar
+                  SHomeAppBar(),
+                  SizedBox(height: SSizes.spaceBtwSections),
+
+                  /// SearchBar
+                  SSearchContainer(text: "Search in store"),
+                  SizedBox(height: SSizes.spaceBtwSections),
+
+                  /// Heading
+                  SSectionHeading(
+                      title: "Popular Categories",
+                      showActionButton: false,
+                      textColor: SColors.white),
+                  SizedBox(height: SSizes.spaceBtwItems),
+
+                  /// Categories
+                  SHomeCategories()
+                ],
               ),
+            ),
+
+            /// Body
+            Padding(
+              padding: const EdgeInsets.all(SSizes.defaultSpace),
+              child: SPromoSlider(banners: [SImage.campus, SImage.zara, SImage.kartik],),
             )
           ],
         ),
@@ -34,6 +57,4 @@ class HomeScreen extends StatelessWidget{
     );
   }
 }
-
-
 
