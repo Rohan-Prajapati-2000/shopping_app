@@ -21,7 +21,7 @@ class SHomeAppBar extends StatelessWidget {
         ],
       ),
       actions: [
-        SCartCounter(onPressed: (){}, iconColor: SColors.white)
+        SCartCounterIcon(onPressed: (){}, iconColor: SColors.white)
       ],
     );
   }

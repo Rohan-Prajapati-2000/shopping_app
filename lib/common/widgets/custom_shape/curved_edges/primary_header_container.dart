@@ -24,12 +24,12 @@ class SPrimaryHeaderContainer extends StatelessWidget {
               Positioned(
                   top: -150,
                   right: -250,
-                  child: SCircularWidget(
+                  child: SRoundedContainer(
                       backgroundColor: SColors.textWhite.withOpacity(0.1))),
               Positioned(
                   top: 100,
                   right: -300,
-                  child: SCircularWidget(
+                  child: SRoundedContainer(
                       backgroundColor: SColors.textWhite.withOpacity(0.1))),
               child
             ],

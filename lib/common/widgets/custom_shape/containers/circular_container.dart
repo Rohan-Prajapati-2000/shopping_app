@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
+import 'package:shoping_app/utils/constants/sizes.dart';
 
-class SCircularWidget extends StatelessWidget {
-  const SCircularWidget({
+class SRoundedContainer extends StatelessWidget {
+  const SRoundedContainer({
     super.key,
-    this.width = 400,
-    this.height = 400,
-    this.radius = 400,
-    this.padding = 0,
-    this.margin,
     this.child,
+    this.width,
+    this.height,
+    this.margin,
+    this.padding,
+    this.radius = SSizes.cardRadiusLg,
     this.backgroundColor = SColors.white,
+    this.borderColor = SColors.primaryColor,
+    this.showBorder = false,
   });
 
   final double? width;
   final double? height;
   final double radius;
-  final double padding;
-  final EdgeInsets? margin;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
   final Widget? child;
   final Color backgroundColor;
+  final Color borderColor;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +32,12 @@ class SCircularWidget extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      padding: EdgeInsets.all(padding),
+      padding: padding,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius), color: backgroundColor),
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(radius),
+          border: showBorder ? Border.all(color: borderColor) : null
+      ),
       child: child,
     );
   }

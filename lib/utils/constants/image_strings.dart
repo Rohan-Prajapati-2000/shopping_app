@@ -31,5 +31,28 @@ class SImage{
   static const String zara = "assets/images/banners/zara.jpg";
   static const String kartik = "assets/images/banners/kartik.jpg";
 
+  /// Product Images
+  static const String product1 = "assets/images/product_image/heels.jpg";
+  static const String product2 = "assets/images/product_image/img2.jpg";
+  static const String product3 = "assets/images/product_image/img3.jpg";
+  static const String product4 = "assets/images/product_image/img12.jpg";
+  static const String product5 = "assets/images/product_image/img14.jpg";
+  static const String product6 = "assets/images/product_image/img16.jpg";
+  static const String product7 = "assets/images/product_image/jacket_1.jpg";
+  static const String product8 = "assets/images/product_image/jacket_2.jpg";
+  static const String product9 = "assets/images/product_image/jacket_3.jpg";
+  static const String product10 = "assets/images/product_image/ledies_shoes.jpg";
+  static const String product11 = "assets/images/product_image/nike_2.jpg";
+  static const String product12 = "assets/images/product_image/nike_shoes.jpg";
+  static const String product13 = "assets/images/product_image/nike_2.jpg";
+  static const String product14 = "assets/images/product_image/phone.jpg";
+  static const String product15 = "assets/images/product_image/picc.jpg";
+  static const String product16 = "assets/images/product_image/shesa.jpg";
+  static const String product17 = "assets/images/product_image/shoes.jpg";
+  static const String product18 = "assets/images/product_image/tshirt_1.jpg";
+  static const String product19 = "assets/images/product_image/tshirt_2.jpg";
+  static const String product20 = "assets/images/product_image/tshirt_3.jpg";
+  static const String product21 = "assets/images/product_image/tshirt_4.jpg";
+  static const String product22 = "assets/images/product_image/watchs.jpg";
 
 }

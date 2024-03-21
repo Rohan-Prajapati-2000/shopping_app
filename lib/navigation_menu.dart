@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shoping_app/features/shop/screens/home.dart';
+import 'package:shoping_app/features/shop/screens/store/store.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/helpers/helper_functions.dart';
 
@@ -39,5 +39,5 @@ class NavigationMenu extends StatelessWidget{
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex = 0.obs;
 
-  final screen = [ HomeScreen() , Container(color: Colors.purple),Container(color: Colors.orange),Container(color: Colors.blue)];
+  final screen = [ HomeScreen() , StoreScreen() ,Container(color: Colors.orange),Container(color: Colors.blue)];
 }

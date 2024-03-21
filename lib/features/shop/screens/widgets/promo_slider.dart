@@ -35,7 +35,7 @@ class SPromoSlider extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               for (int i = 0; i < banners.length; i++)
-                SCircularWidget(
+                SRoundedContainer(
                     width: 20,
                     height: 4,
                     margin: EdgeInsets.only(right: 10),
