@@ -28,17 +28,17 @@ class _SLoginFormState extends State<SLoginForm> {
           children: [
             /// Email
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: SText.email),
             ),
-            SizedBox(height: SSizes.spaceBtwInputField),
+            const SizedBox(height: SSizes.spaceBtwInputField),
 
             /// Password
             TextFormField(
               obscureText: passwordVisible,
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Iconsax.password_check),
+                    prefixIcon: const Icon(Iconsax.password_check),
                     labelText: SText.password,
                     suffixIcon: IconButton(
                         icon: Icon(passwordVisible ? Iconsax.eye_slash : Iconsax.eye),
@@ -47,7 +47,7 @@ class _SLoginFormState extends State<SLoginForm> {
                             passwordVisible = !passwordVisible;
                           });
                         }))),
-            SizedBox(height: SSizes.spaceBtwInputField / 2),
+            const SizedBox(height: SSizes.spaceBtwInputField / 2),
 
             // Remember Me and Forget Password
             Row(
@@ -57,28 +57,28 @@ class _SLoginFormState extends State<SLoginForm> {
                 Row(
                   children: [
                     Checkbox(value: true, onChanged: (value) {}),
-                    Text(SText.rememberMe),
+                    const Text(SText.rememberMe),
                   ],
                 ),
 
                 /// Forget Password
-                TextButton(onPressed: () => Get.to(()=> ForgetPassword()), child: Text(SText.forgetPassword)),
+                TextButton(onPressed: () => Get.to(()=> const ForgetPassword()), child: const Text(SText.forgetPassword)),
               ],
             ),
-            SizedBox(height: SSizes.spaceBtwSections),
+            const SizedBox(height: SSizes.spaceBtwSections),
 
             /// Sign In Button
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => Get.to(()=> NavigationMenu()), child: Text(SText.signIn))),
-            SizedBox(height: SSizes.spaceBtwItems),
+                    onPressed: () => Get.to(()=> const NavigationMenu()), child: const Text(SText.signIn))),
+            const SizedBox(height: SSizes.spaceBtwItems),
 
             /// create account button
             SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                    onPressed: () => Get.to(() => SignupScreen()), child: Text(SText.createAccount)))
+                    onPressed: () => Get.to(() => const SignupScreen()), child: const Text(SText.createAccount)))
           ],
         ),
       ),

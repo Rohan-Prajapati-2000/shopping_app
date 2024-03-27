@@ -1,4 +1,3 @@
-import 'package:get_storage/get_storage.dart';
 
 class SValidator{
   static String? validateEmail(String? value){
@@ -43,7 +42,7 @@ class SValidator{
   }
 
   static String? validatePhoneNumber(String value){
-    if(value==null || value.isEmpty){
+    if(value.isEmpty){
       return "Phone Number is required";
     }
 

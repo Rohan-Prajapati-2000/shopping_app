@@ -25,7 +25,7 @@ class STermsAndCondition extends StatelessWidget {
                   decorationColor: dark ? SColors.white : SColors.primaryColor
               )),
               TextSpan(text: 'and ', style: Theme.of(context).textTheme.bodySmall),
-              TextSpan(text: "${SText.termsOfUse}", style: Theme.of(context).textTheme.bodySmall!.apply(
+              TextSpan(text: SText.termsOfUse, style: Theme.of(context).textTheme.bodySmall!.apply(
                   color: dark ? SColors.white : SColors.primaryColor,
                   decoration: TextDecoration.underline,
                   decorationColor: dark ? SColors.white : SColors.primaryColor

@@ -8,10 +8,12 @@ import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/constants/text_strings.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: SSpacingStyle.paddingWithAppBarHeight,

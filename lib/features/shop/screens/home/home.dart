@@ -1,18 +1,16 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:shoping_app/common/widgets/custom_shape/containers/circular_container.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/search_container.dart';
 import 'package:shoping_app/common/widgets/custom_shape/curved_edges/primary_header_container.dart';
-import 'package:shoping_app/common/widgets/images/s_rounded_image.dart';
 import 'package:shoping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
-import 'package:shoping_app/features/shop/screens/widgets/home_appbar.dart';
-import 'package:shoping_app/features/shop/screens/widgets/home_categories.dart';
-import 'package:shoping_app/features/shop/screens/widgets/promo_slider.dart';
+import 'package:shoping_app/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:shoping_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
+
+import 'widgets/home_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             /// This is HEADER in BLUE Parts
-            SPrimaryHeaderContainer(
+            const SPrimaryHeaderContainer(
               child: Column(
                 children: [
                   /// AppBar
@@ -37,7 +35,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Heading
                   Padding(
-                    padding: const EdgeInsets.only(left: SSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: SSizes.defaultSpace),
                     child: SSectionHeading(
                         title: "Popular Categories",
                         showActionButton: false,
@@ -47,7 +45,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Categories
                   Padding(
-                    padding: const EdgeInsets.only(left: SSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: SSizes.defaultSpace),
                     child: SHomeCategories(),
                   ),
                 ],
@@ -60,19 +58,20 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// Promo Slider
-                  SPromoSlider(
+                  const SPromoSlider(
                       banners: [SImage.campus, SImage.zara, SImage.kartik]),
-                  SizedBox(height: SSizes.spaceBtwSections),
+                  const SizedBox(height: SSizes.spaceBtwSections),
 
                   /// Heading
                   SSectionHeading(title: "Popular Products", onPressed: (){},),
-                  SizedBox(height: SSizes.spaceBtwItems),
+                  const SizedBox(height: SSizes.spaceBtwItems),
 
                   /// Popular product
-                  SGridLayout(itemCount: 10, itemBuilder: (_, index) => SProductCartVertical(),),
+                  SGridLayout(itemCount: 10, itemBuilder: (_, index) => const SProductCartVertical(),),
                 ],
               ),
-            )
+            ),
+            const SizedBox(height: SSizes.spaceBtwSections)
           ],
         ),
       ),

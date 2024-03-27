@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shoping_app/common/widgets/form_divider.dart';
 import 'package:shoping_app/common/widgets/social_buttons.dart';
@@ -9,6 +8,8 @@ import 'package:shoping_app/utils/helpers/helper_functions.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
@@ -16,7 +17,7 @@ class SignupScreen extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -26,17 +27,17 @@ class SignupScreen extends StatelessWidget {
               const SizedBox(height: SSizes.spaceBtwSections),
 
               /// From
-              SSignupForm(),
+              const SSignupForm(),
 
-              SizedBox(height: SSizes.spaceBtwInputField),
+              const SizedBox(height: SSizes.spaceBtwInputField),
 
               /// Divider
-              SFormDivider(dividerText: SText.orSignUpWith),
+              const SFormDivider(dividerText: SText.orSignUpWith),
 
-              SizedBox(height: SSizes.spaceBtwInputField),
+              const SizedBox(height: SSizes.spaceBtwInputField),
 
               /// Social Button
-              SSocialButtons()
+              const SSocialButtons()
 
             ],
           ),

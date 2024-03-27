@@ -19,13 +19,13 @@ class SGridLayout extends StatelessWidget {
         itemCount: itemCount,
         shrinkWrap: true,
         padding: EdgeInsets.zero,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: SSizes.gridViewSpacing,
-            crossAxisSpacing: SSizes.gridViewSpacing,
-            mainAxisExtent: 288),
-        itemBuilder: itemBuilder
-    );
+          crossAxisCount: 2,
+          mainAxisExtent: mainAxisExtent,
+          mainAxisSpacing: SSizes.gridViewSpacing,
+          crossAxisSpacing: SSizes.gridViewSpacing,
+        ),
+        itemBuilder: itemBuilder);
   }
 }

@@ -27,7 +27,7 @@ class OnBoardingPage extends StatelessWidget {
           Text(title,
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center),
-          SizedBox(height: SSizes.spaceBtwItems),
+          const SizedBox(height: SSizes.spaceBtwItems),
           Text(
             subTitle,
             style: Theme.of(context).textTheme.bodyMedium,

@@ -21,62 +21,62 @@ class SSignupForm extends StatelessWidget {
             /// First Name
             Expanded(
                 child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: SText.firstName, prefixIcon: Icon(Iconsax.user)),
             )),
-            SizedBox(width: SSizes.spaceBtwInputField),
+            const SizedBox(width: SSizes.spaceBtwInputField),
 
             /// Second Name
             Expanded(
                 child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: SText.lastName, prefixIcon: Icon(Iconsax.user)),
             )),
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwInputField),
+        const SizedBox(height: SSizes.spaceBtwInputField),
 
         /// User Name
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               labelText: SText.userName, prefixIcon: Icon(Iconsax.user_edit)),
         ),
-        SizedBox(height: SSizes.spaceBtwInputField),
+        const SizedBox(height: SSizes.spaceBtwInputField),
 
         /// Email
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               labelText: SText.email, prefixIcon: Icon(Iconsax.direct)),
         ),
-        SizedBox(height: SSizes.spaceBtwInputField),
+        const SizedBox(height: SSizes.spaceBtwInputField),
 
         /// Phone Number
         TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               labelText: SText.phoneNo, prefixIcon: Icon(Iconsax.call)),
         ),
-        SizedBox(height: SSizes.spaceBtwInputField),
+        const SizedBox(height: SSizes.spaceBtwInputField),
 
         /// Password
         TextFormField(
           obscureText: true,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               suffixIcon: Icon(Iconsax.eye_slash),
               labelText: SText.password,
               prefixIcon: Icon(Iconsax.password_check)),
         ),
-        SizedBox(height: SSizes.spaceBtwInputField),
+        const SizedBox(height: SSizes.spaceBtwInputField),
 
         /// Terms&Condition Checkbox
-        STermsAndCondition(),
+        const STermsAndCondition(),
 
-        SizedBox(height: SSizes.spaceBtwInputField),
+        const SizedBox(height: SSizes.spaceBtwInputField),
 
         SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-                onPressed: () => Get.to(() => VerifyEmailScreen()),
-                child: Text(SText.createAccount)))
+                onPressed: () => Get.to(() => const VerifyEmailScreen()),
+                child: const Text(SText.createAccount)))
       ],
     ));
   }

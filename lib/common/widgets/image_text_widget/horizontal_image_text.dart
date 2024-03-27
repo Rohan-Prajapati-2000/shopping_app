@@ -9,7 +9,7 @@ class SHorizontalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     this.textColor = SColors.white,
-    this.backgroundColor = SColors.white,
+    this.backgroundColor,
     this.onTap,
   });
 
@@ -31,15 +31,15 @@ class SHorizontalImageText extends StatelessWidget {
             Container(
               width: 56,
               height: 56,
-              padding: EdgeInsets.all(SSizes.sm),
+              padding: const EdgeInsets.all(SSizes.sm),
               decoration: BoxDecoration(
                   color: backgroundColor ?? (dark ? SColors.black : SColors.white),
                   borderRadius: BorderRadius.circular(56)),
               child: Center(
-                child: Image(image: AssetImage(image),fit: BoxFit.cover,color: SColors.dark),
+                child: Image(image: AssetImage(image),fit: BoxFit.cover,color: dark ? SColors.white : SColors.black),
               ),
             ),
-            SizedBox(height: SSizes.spaceBtwItems / 2),
+            const SizedBox(height: SSizes.spaceBtwItems / 2),
             SizedBox(
                 width: 55,
                 child: Text(title,

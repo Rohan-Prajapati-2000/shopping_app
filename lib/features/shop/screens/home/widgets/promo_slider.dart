@@ -5,7 +5,6 @@ import 'package:shoping_app/common/widgets/custom_shape/containers/circular_cont
 import 'package:shoping_app/common/widgets/images/s_rounded_image.dart';
 import 'package:shoping_app/features/shop/controllers/home_controller.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
-import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
 class SPromoSlider extends StatelessWidget {
@@ -29,7 +28,7 @@ class SPromoSlider extends StatelessWidget {
                 viewportFraction: 1,
                 onPageChanged: (index, _) =>
                     controller.updatePageIndicator(index))),
-        SizedBox(height: SSizes.spaceBtwSections),
+        const SizedBox(height: SSizes.spaceBtwSections),
         Obx(
           () => Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +37,7 @@ class SPromoSlider extends StatelessWidget {
                 SRoundedContainer(
                     width: 20,
                     height: 4,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     backgroundColor: controller.carousalCurrentIndex.value == i ? SColors.primaryColor : SColors.grey),
             ],
           ),

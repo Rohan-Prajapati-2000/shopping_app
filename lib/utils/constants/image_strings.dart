@@ -26,6 +26,10 @@ class SImage{
   static const String jeweleryIcon = "assets/icons/categories/jewelery.png";
 
 
+  /// user profile
+  static const String user = "assets/images/user/user.png";
+
+
   /// Banners
   static const String campus = "assets/images/banners/campus.jpg";
   static const String zara = "assets/images/banners/zara.jpg";

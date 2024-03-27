@@ -16,24 +16,27 @@ class SPrimaryHeaderContainer extends StatelessWidget {
     return SCurvedEdgeWidget(
       child: Container(
         color: SColors.primaryColor,
-        padding: EdgeInsets.all(0),
-        child: SizedBox(
-          height: 400,
-          child: Stack(
-            children: [
-              Positioned(
-                  top: -150,
-                  right: -250,
-                  child: SRoundedContainer(
-                      backgroundColor: SColors.textWhite.withOpacity(0.1))),
-              Positioned(
-                  top: 100,
-                  right: -300,
-                  child: SRoundedContainer(
-                      backgroundColor: SColors.textWhite.withOpacity(0.1))),
-              child
-            ],
-          ),
+        padding: const EdgeInsets.all(0),
+        child: Stack(
+          children: [
+            Positioned(
+                top: -80,
+                right: -100,
+                child: SRoundedContainer(
+                  height: 250,
+                    width: 250,
+                    radius: 250,
+                    backgroundColor: SColors.textWhite.withOpacity(0.1))),
+            Positioned(
+                top: 100,
+                right: -180,
+                child: SRoundedContainer(
+                  height: 250,
+                    width: 250,
+                    radius: 250,
+                    backgroundColor: SColors.textWhite.withOpacity(0.1))),
+            child
+          ],
         ),
       ),
     );

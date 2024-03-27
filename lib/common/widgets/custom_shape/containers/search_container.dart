@@ -27,7 +27,7 @@ class SSearchContainer extends StatelessWidget {
       padding: padding,
       child: Container(
         width: SDeviceUtility.getScreenWidth(),
-        padding: EdgeInsets.all(SSizes.md),
+        padding: const EdgeInsets.all(SSizes.md),
         decoration: BoxDecoration(
             color: showBackground
                 ? dark
@@ -38,7 +38,7 @@ class SSearchContainer extends StatelessWidget {
             border: showBorder ? Border.all(color: SColors.grey) : null),
         child: Row(children: [
           Icon(icon, color: SColors.darkGrey),
-          SizedBox(width: SSizes.spaceBtwItems),
+          const SizedBox(width: SSizes.spaceBtwItems),
           Text(text, style: Theme.of(context).textTheme.bodySmall),
         ]),
       ),

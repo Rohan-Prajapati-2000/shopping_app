@@ -22,7 +22,7 @@ class SLoginHeader extends StatelessWidget {
         ),
         Text(SText.loginTitle,
             style: Theme.of(context).textTheme.headlineMedium),
-        SizedBox(height: SSizes.sm),
+        const SizedBox(height: SSizes.sm),
         Text(SText.loginSubTitle,
             style: Theme.of(context).textTheme.bodyMedium),
       ],

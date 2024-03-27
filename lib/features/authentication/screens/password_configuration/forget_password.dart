@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -7,6 +6,8 @@ import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/constants/text_strings.dart';
 
 class ForgetPassword extends StatelessWidget {
+  const ForgetPassword({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,21 +20,21 @@ class ForgetPassword extends StatelessWidget {
             /// Heading
             Text(SText.forgetPasswordTitle,
                 style: Theme.of(context).textTheme.headlineMedium),
-            SizedBox(height: SSizes.spaceBtwItems),
+            const SizedBox(height: SSizes.spaceBtwItems),
             Text(SText.forgetPasswordSubTitle,
                 style: Theme.of(context).textTheme.labelMedium),
-            SizedBox(height: SSizes.spaceBtwSections * 2),
+            const SizedBox(height: SSizes.spaceBtwSections * 2),
 
             /// Text Field
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: SText.email,
                   prefixIcon: Icon(Iconsax.direct_right)),
             ),
-            SizedBox(height: SSizes.spaceBtwSections),
+            const SizedBox(height: SSizes.spaceBtwSections),
 
             /// Submit Button
-            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: ()=> Get.to(()=> ResetPassword()), child: Text(SText.submit)))
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: ()=> Get.to(()=> const ResetPassword()), child: const Text(SText.submit)))
           ],
         ),
       ),
