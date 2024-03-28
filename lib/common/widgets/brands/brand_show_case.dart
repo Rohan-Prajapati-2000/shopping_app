@@ -24,7 +24,7 @@ class SBrandShowcase extends StatelessWidget {
       child: Column(
         children: [
           /// Brand with Product count
-          const SBrandCard(showBorder: false),
+          SBrandCard(showBorder: false),
           const SizedBox(height: SSizes.spaceBtwItems),
 
           /// Brand top 3 Product Images

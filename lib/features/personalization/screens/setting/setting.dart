@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shoping_app/common/widgets/app_bar/app_bar.dart';
 import 'package:shoping_app/common/widgets/custom_shape/curved_edges/primary_header_container.dart';
 import 'package:shoping_app/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/personalization/screens/profile/profile.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
@@ -31,7 +33,7 @@ class SettingScreen extends StatelessWidget {
                             .apply(color: Colors.white))),
 
                 /// User Profile Card
-                const SUserProfileTile(),
+                SUserProfileTile(onPressed: () => Get.to(() => ProfileScreen())),
                 const SizedBox(height: SSizes.spaceBtwSections),
               ],
             )),

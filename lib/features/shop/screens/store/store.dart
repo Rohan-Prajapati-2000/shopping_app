@@ -60,14 +60,14 @@ class StoreScreen extends StatelessWidget {
                               itemCount: 4,
                               mainAxisExtent: 80,
                               itemBuilder: (_, index) {
-                                return const SBrandCard(showBorder: true);
+                                return SBrandCard(showBorder: true);
                               })
                         ],
                       ),
                     ),
 
                     /// Tabs
-                    bottom: const STabBar(tabs: [
+                    bottom: STabBar(tabs: [
                       Tab(child: Text('Sport')),
                       Tab(child: Text('Furniture')),
                       Tab(child: Text('Electronics')),

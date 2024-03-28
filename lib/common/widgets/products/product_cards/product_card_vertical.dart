@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shoping_app/common/styles/shadows.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/circular_container.dart';
@@ -7,6 +8,7 @@ import 'package:shoping_app/common/widgets/images/s_rounded_image.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_price_text.dart';
 import 'package:shoping_app/common/widgets/texts/product_tile_text.dart';
 import 'package:shoping_app/common/widgets/texts/s_brand_title_text_with_verified_icon.dart';
+import 'package:shoping_app/features/shop/screens/product_details/product_details.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
@@ -21,7 +23,7 @@ class SProductCartVertical extends StatelessWidget {
 
     /// Container with side padding, color, edges, radius and shadow
     return GestureDetector(
-      onTap: (){},
+      onTap: ()=> Get.to(() => ProductDetailsScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -73,7 +75,7 @@ class SProductCartVertical extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SProductTileText(title: 'Black & White Nike Air Shoes', smallSize: true),
+                    SProductTitleText(title: 'Black & White Nike Air Shoes', smallSize: true),
                     SizedBox(height: SSizes.spaceBtwItems/2),
                     SBrandTitleWithVerifiedIcon(title: 'Nike'),
                   ],

@@ -7,7 +7,7 @@ import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
 class SBrandCard extends StatelessWidget {
-  const SBrandCard({
+   SBrandCard({
     super.key,
     required this.showBorder,
     this.onTap,
@@ -22,11 +22,11 @@ class SBrandCard extends StatelessWidget {
       onTap: onTap,
       child: SRoundedContainer(
         showBorder: showBorder,
-        padding: const EdgeInsets.all(SSizes.sm),
+        padding:  EdgeInsets.all(SSizes.sm),
         backgroundColor: Colors.transparent,
         child: Row(
           children: [
-            const Flexible(
+             Flexible(
               child: SCircularImage(
                 isNetworkImage: false,
                 image: SImage.clothIcon,
@@ -34,7 +34,7 @@ class SBrandCard extends StatelessWidget {
                 // overlayColor: SHelperFunctions.isDarkMode(context) ? SColors.white : SColors.black,
               ),
             ),
-            const SizedBox(width: SSizes.spaceBtwItems / 2),
+             SizedBox(width: SSizes.spaceBtwItems / 2),
 
             /// Text
             Expanded(
@@ -42,7 +42,7 @@ class SBrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SBrandTitleWithVerifiedIcon(
+                   SBrandTitleWithVerifiedIcon(
                       title: 'Nike', brandTextSize: TextSizes.large),
                   Text(
                     '256 Products',

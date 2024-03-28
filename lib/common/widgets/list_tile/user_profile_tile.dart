@@ -6,9 +6,10 @@ import 'package:shoping_app/utils/constants/image_strings.dart';
 
 class SUserProfileTile extends StatelessWidget {
   const SUserProfileTile({
-    super.key,
+    super.key, required this.onPressed,
   });
 
+  final VoidCallback onPressed;
 
 
   @override
@@ -17,7 +18,7 @@ class SUserProfileTile extends StatelessWidget {
       leading: const SCircularImage(image: SImage.user,height: 50,width: 50,padding: 0),
       title: Text("MR.MIND", style: Theme.of(context).textTheme.headlineMedium!.apply(color: Colors.white)),
       subtitle: Text("mr.mind@gmail.com", style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)),
-      trailing: IconButton(onPressed: (){}, icon: const Icon(Iconsax.edit, color: SColors.white)),
+      trailing: IconButton(onPressed: onPressed, icon: const Icon(Iconsax.edit, color: SColors.white)),
     );
   }
 }
