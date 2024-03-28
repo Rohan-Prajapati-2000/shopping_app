@@ -33,6 +33,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   /// - Attributes
                   SProductsAttributes(),
                   /// - Checkout Button
+
                   /// - Description
                   /// - Reviews
                 ],

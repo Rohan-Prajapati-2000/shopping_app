@@ -73,12 +73,36 @@ class SProductsAttributes extends StatelessWidget {
 
         /// Attributes
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SSectionHeading(title: "Color"),
             SizedBox(height: SSizes.spaceBtwItems / 2),
-            // SChoiceChip()
+            Wrap(
+              children: [
+                SChoiceChip(text: 'Green', selected: true, onSelected: (value){}),
+                SChoiceChip(text: 'Blue', selected: false, onSelected: (value){}),
+                SChoiceChip(text: 'Yellow', selected: false, onSelected: (value){}),
+              ],
+            )
           ],
-        )
+        ),
+
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SSectionHeading(title: "Size"),
+            SizedBox(height: SSizes.spaceBtwItems / 2),
+            Wrap(
+              spacing: 5,
+              children: [
+                SChoiceChip(text: 'EU 34', selected: true, onSelected: (value){}),
+                SChoiceChip(text: 'EU 36', selected: false, onSelected: (value){}),
+                SChoiceChip(text: 'EU 38', selected: false, onSelected: (value){}),
+              ]
+            )
+          ],
+        ),
+
       ],
     );
   }
