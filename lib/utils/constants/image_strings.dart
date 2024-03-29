@@ -29,6 +29,11 @@ class SImage{
   /// user profile
   static const String user = "assets/images/user/user.png";
 
+  /// Product Reviews Images
+  static const String user1 = "assets/images/reviews/user1.png";
+  static const String user2 = "assets/images/reviews/user_man/.png";
+  static const String user3 = "assets/images/reviews/user_woman.png";
+
 
   /// Banners
   static const String campus = "assets/images/banners/campus.jpg";

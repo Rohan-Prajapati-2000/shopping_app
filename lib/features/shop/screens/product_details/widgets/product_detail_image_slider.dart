@@ -53,7 +53,7 @@ class SProductImageSlider extends StatelessWidget {
                     itemBuilder: (_, index) => SRoundedImage(
                         width: 80,
                         height: 80,
-                        imageUrl: SImage.product3,
+                        imageUrl: SImage.product8,
                         border: Border.all(color: SColors.primaryColor),
                         padding: EdgeInsets.all(SSizes.sm),
                         backgroundColor: dark ? SColors.dark : SColors.white)),
