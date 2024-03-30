@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shoping_app/common/widgets/app_bar/app_bar.dart';
 import 'package:shoping_app/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:shoping_app/features/shop/screens/cart/cart.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/text_strings.dart';
 
@@ -21,7 +23,7 @@ class SHomeAppBar extends StatelessWidget {
         ],
       ),
       actions: [
-        SCartCounterIcon(onPressed: (){}, iconColor: SColors.white)
+        SCartCounterIcon(onPressed: () => Get.to(()=> CartScreen()), iconColor: SColors.white)
       ],
     );
   }

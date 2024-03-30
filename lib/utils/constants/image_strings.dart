@@ -40,6 +40,16 @@ class SImage{
   static const String zara = "assets/images/banners/zara.jpg";
   static const String kartik = "assets/images/banners/kartik.jpg";
 
+  /// Payment-Methods
+  static const String googlePay = "assets/icons/payment_method/google_pay.png";
+  static const String creditCard = "assets/icons/payment_method/credit_card.png";
+  static const String masterPay = "assets/icons/payment_method/master_card.png";
+  static const String visa = "assets/icons/payment_method/visa.png";
+  static const String payPal = "assets/icons/payment_method/paypal.png";
+  static const String payStack = "assets/icons/payment_method/money_stack.png";
+  static const String paytm = "assets/icons/payment_method/paytm.png";
+  static const String successfulpaymentIcon = "assets/icons/payment_method/payment_successful.png";
+
   /// Product Images
   static const String product1 = "assets/images/product_image/heels.jpg";
   static const String product2 = "assets/images/product_image/img2.jpg";
