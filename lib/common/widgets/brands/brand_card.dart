@@ -7,7 +7,7 @@ import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
 class SBrandCard extends StatelessWidget {
-   SBrandCard({
+   const SBrandCard({
     super.key,
     required this.showBorder,
     this.onTap,

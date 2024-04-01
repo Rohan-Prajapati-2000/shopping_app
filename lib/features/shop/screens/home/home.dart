@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/search_container.dart';
 import 'package:shoping_app/common/widgets/custom_shape/curved_edges/primary_header_container.dart';
 import 'package:shoping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/shop/screens/all_products/all_products.dart';
 import 'package:shoping_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:shoping_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
@@ -45,7 +47,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Categories
                   Padding(
-                    padding: EdgeInsets.only(left: SSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: SSizes.defaultSpace, bottom: SSizes.defaultSpace),
                     child: SHomeCategories(),
                   ),
                 ],
@@ -63,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: SSizes.spaceBtwSections),
 
                   /// Heading
-                  SSectionHeading(title: "Popular Products", onPressed: (){},),
+                  SSectionHeading(title: "Popular Products", onPressed: ()=> Get.to(()=> AllProductsScreen()),),
                   const SizedBox(height: SSizes.spaceBtwItems),
 
                   /// Popular product
