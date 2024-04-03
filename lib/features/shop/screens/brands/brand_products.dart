@@ -27,5 +27,4 @@ class BrandProducts extends StatelessWidget{
       ),
     );
   }
-
 }

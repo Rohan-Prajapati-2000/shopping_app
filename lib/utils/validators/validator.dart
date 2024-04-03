@@ -1,5 +1,16 @@
 
+import 'package:get_storage/get_storage.dart';
+
 class SValidator{
+
+  /// Empty text validator
+  static String? validateEmptyText(String? fieldName, String? value){
+    if(value==null || value.isEmpty){
+      return '$fieldName is Required.';
+    }
+  }
+
+
   static String? validateEmail(String? value){
     if(value == null || value.isEmpty){
       return 'Email is required.';
@@ -42,14 +53,14 @@ class SValidator{
   }
 
   static String? validatePhoneNumber(String value){
-    if(value.isEmpty){
+    if(value==null || value.isEmpty){
       return "Phone Number is required";
     }
 
     final phoneRegExp = RegExp(r'^\d{10}$');
 
     if(!phoneRegExp.hasMatch(value)){
-      return 'Invalid phone number formate (10 digit Required)';
+      return 'Invalid phone number format (10 digit Required)';
     }
     return null;
   }

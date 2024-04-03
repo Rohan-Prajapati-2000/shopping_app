@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shoping_app/features/authentication/controllers_onboarding/onboarding_controller.dart';
+import 'package:shoping_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/device/device_utility.dart';
