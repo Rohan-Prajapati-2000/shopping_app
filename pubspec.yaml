@@ -35,6 +35,8 @@ dependencies:
 
 #  Firebase
   firebase_core: ^2.27.2
+  firebase_auth: ^4.19.0
+  cloud_firestore: ^4.16.0
 
 
 dev_dependencies:
@@ -58,6 +60,7 @@ flutter:
     - assets/images/user/
     - assets/images/reviews/
     - assets/icons/payment_method/
+    - assets/animation/loading_animation/
 
   fonts:
     - family: Poppins

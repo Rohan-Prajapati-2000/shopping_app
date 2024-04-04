@@ -74,4 +74,10 @@ class SImage{
   static const String product21 = "assets/images/product_image/tshirt_4.jpg";
   static const String product22 = "assets/images/product_image/watchs.jpg";
 
+
+  /// Lottie Animation
+  static const String loadingAnimation = 'assets/animation/loading_animation/loadinga.json';
+  static const String verifySeccess = 'assets/animation/loading_animation/verifySeccess.json';
+
+
 }

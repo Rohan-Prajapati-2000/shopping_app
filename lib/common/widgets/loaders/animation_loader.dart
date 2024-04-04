@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:shoping_app/main.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
@@ -35,8 +33,7 @@ class SAnimationLoaderWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(animation,
-              width: MediaQuery.of(context).size.width * 0.8),
+          Lottie.asset(animation, width: MediaQuery.of(context).size.width * 0.8),
           const SizedBox(height: SSizes.defaultSpace),
           Text(
             text,
@@ -53,10 +50,7 @@ class SAnimationLoaderWidget extends StatelessWidget {
                         OutlinedButton.styleFrom(backgroundColor: SColors.dark),
                     child: Text(
                       actionText!,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .apply(color: SColors.light),
+                      style: Theme.of(context).textTheme.bodyMedium!.apply(color: SColors.light),
                     ),
                   ),
                 )
