@@ -16,8 +16,8 @@ class   SFullScreenLoaders {
     showDialog(
         context: Get.overlayContext!, // Use Get.overlayContext for overlay dialogs
         barrierDismissible: false, // The dialog can't be dismissed by tapping outside it.
-        builder: (_) => AbsorbPointer(
-          absorbing: false,  // Disable popping with the back button
+        builder: (_) => PopScope(
+          canPop: false,  // Disable popping with the back button
             child:Container(
               color: SHelperFunctions.isDarkMode(Get.context!) ? SColors.dark : SColors.white,
               width: double.infinity,

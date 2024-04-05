@@ -77,7 +77,8 @@ class SImage{
 
   /// Lottie Animation
   static const String loadingAnimation = 'assets/animation/loading_animation/loadinga.json';
-  static const String verifySeccess = 'assets/animation/loading_animation/verifySeccess.json';
+  static const String successRegistrationAnimation = 'assets/animation/loading_animation/success.json';
+  static const String verify1 = 'assets/animation/loading_animation/verify.json';
 
 
 }

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shoping_app/data/repositories/authentication/authentication_repositories.dart';
 import 'package:shoping_app/features/authentication/controllers/sign_up/verify_email_controller.dart';
-import 'package:shoping_app/features/authentication/screens/login/login.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/constants/text_strings.dart';
 import 'package:shoping_app/utils/helpers/helper_functions.dart';
