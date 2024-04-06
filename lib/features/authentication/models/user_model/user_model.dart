@@ -10,7 +10,7 @@ class UserModel {
   final String userName;
   final String email;
   String phoneNumber;
-  // String profilePicture;
+  String profilePicture;
 
   /// Constructor for UserModel
   UserModel({
@@ -20,7 +20,7 @@ class UserModel {
     required this.userName,
     required this.email,
     required this.phoneNumber,
-    // required this.profilePicture,
+    required this.profilePicture,
   });
 
   /// Helper function to get the full name.
@@ -52,7 +52,7 @@ class UserModel {
       userName: '',
       email: '',
       phoneNumber: '',
-      // profilePicture: ''
+      profilePicture: ''
   );
 
   /// Convert model to JSON structure for storing data in Firebase;
@@ -63,7 +63,7 @@ class UserModel {
       'UserName': userName,
       'Email': email,
       'PhoneNumber': phoneNumber,
-      // 'ProfilePicture': profilePicture,
+      'ProfilePicture': profilePicture,
     };
   }
 
@@ -77,7 +77,7 @@ class UserModel {
         userName: data['UserName'] ?? '',
         email: data['Email'] ?? '',
         phoneNumber: data['PhoneNumber'] ?? '',
-        // profilePicture: data['ProfilePicture'] ?? '',
+        profilePicture: data['ProfilePicture'] ?? '',
       );
     } else {
       throw Exception('Document snapshot data is null');

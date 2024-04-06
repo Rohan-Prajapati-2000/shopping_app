@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shoping_app/data/repositories/authentication/authentication_repositories.dart';
+import 'package:shoping_app/features/personalization/controllers/user_controller.dart';
 import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/helpers/network_manager.dart';
 import 'package:shoping_app/utils/popups/full_screen_loader.dart';
@@ -17,6 +18,8 @@ class LoginController extends GetxController{
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
+  final userController = Get.put(UserController());
+
   @override
   void onInit() {
     // Check if remember me is selected and fill email and password
@@ -28,7 +31,7 @@ class LoginController extends GetxController{
     super.onInit();
   }
 
-  /// Email and Password Signin
+  /// Email and Password Signing
   Future<void> emailAndPasswordSignIn() async {
     try {
       // Start Loading
@@ -69,6 +72,35 @@ class LoginController extends GetxController{
       // Redirect
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
+      SFullScreenLoaders.stopLoading();
+      SLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
+    }
+  }
+
+  /// Google SignIn Authentication
+  Future<void> googleSignIn() async{
+    try{
+      /// Start Loading
+      SFullScreenLoaders.openLoadingDialog('Loading', SImage.loadingAnimation);
+
+      /// Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if(!isConnected){
+        SFullScreenLoaders.stopLoading();
+        return;
+      }
+
+      // Google Authentication
+      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+
+      /// save user record
+      await userController.saveUserRecord(userCredentials);
+
+      /// Remove the loader
+      SFullScreenLoaders.stopLoading();
+
+    } catch (e){
+      /// Remove the loader
       SFullScreenLoaders.stopLoading();
       SLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     }
