@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:shoping_app/common/widgets/effects/shimmer.dart';
+import 'package:shoping_app/common/widgets/shimmers/shimmer.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/helpers/helper_functions.dart';
 
