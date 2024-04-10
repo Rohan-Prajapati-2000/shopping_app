@@ -50,21 +50,17 @@ class AuthenticationRepository extends GetxController {
       deviceStorage.writeIfNull('IsFirstTime', true);
       // Check if it's the first time launching the app
       deviceStorage.read('IsFirstTime') != true
-          ? Get
-          .offAll(() => const LoginScreen()) // Redirect to Login screen if not the first time
-          : Get.offAll(
-          const OnBoardingScreen()); // Redirect to OnBoarding Screen if it's the first time
+          ? Get.offAll(() => const LoginScreen()) // Redirect to Login screen if not the first time
+          : Get.offAll(const OnBoardingScreen()); // Redirect to OnBoarding Screen if it's the first time
     }
   }
 
 /*----------------------------Email & Password Sign in---------------------------------*/
 
   /// [EmailAuthentication] - Login
-  Future<UserCredential> loginWithEmailAndPassword(String email,
-      String password) async {
+  Future<UserCredential> loginWithEmailAndPassword(String email,String password) async {
     try {
-      return await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+      return await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw SFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -82,8 +78,7 @@ class AuthenticationRepository extends GetxController {
   /// [EmailAuthentication] - Register
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
     try {
-      return await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       throw SFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
@@ -106,7 +101,7 @@ class AuthenticationRepository extends GetxController {
     } on FirebaseException catch (e) {
       throw SFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw SFormatException();
+      throw const SFormatException();
     } on PlatformException catch (e) {
       throw SPlatformException(e.code).message;
     } catch (e) {
@@ -194,13 +189,13 @@ class AuthenticationRepository extends GetxController {
     try {
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
-      Get.offAll(() => LoginScreen());
+      Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch (e) {
       throw SFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
       throw SFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw SFormatException();
+      throw const SFormatException();
     } on PlatformException catch (e) {
       throw SPlatformException(e.code).message;
     } catch (e) {
@@ -218,13 +213,11 @@ class AuthenticationRepository extends GetxController {
     } on FirebaseException catch (e) {
       throw SFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw SFormatException();
+      throw const SFormatException();
     } on PlatformException catch (e) {
       throw SPlatformException(e.code).message;
     } catch (e) {
       throw 'Something went wrong. Please try again';
     }
   }
-
-
 }

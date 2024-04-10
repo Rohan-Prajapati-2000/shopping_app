@@ -4,6 +4,7 @@ import 'package:shoping_app/common/widgets/app_bar/app_bar.dart';
 import 'package:shoping_app/common/widgets/effects/shimmer.dart';
 import 'package:shoping_app/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:shoping_app/features/personalization/controllers/user_controller.dart';
+import 'package:shoping_app/features/personalization/screens/profile/profile.dart';
 import 'package:shoping_app/features/shop/screens/cart/cart.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/text_strings.dart';

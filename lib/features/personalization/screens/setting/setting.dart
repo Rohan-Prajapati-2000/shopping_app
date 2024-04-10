@@ -6,6 +6,7 @@ import 'package:shoping_app/common/widgets/custom_shape/curved_edges/primary_hea
 import 'package:shoping_app/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
 import 'package:shoping_app/data/repositories/authentication/authentication_repositories.dart';
+import 'package:shoping_app/features/personalization/controllers/user_controller.dart';
 import 'package:shoping_app/features/personalization/screens/address/address.dart';
 import 'package:shoping_app/features/personalization/screens/profile/profile.dart';
 import 'package:shoping_app/features/shop/screens/order/order.dart';
@@ -19,6 +20,7 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
