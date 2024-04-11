@@ -34,8 +34,8 @@ class BrandModel {
       id: data['Id'] ?? '',
       name: data['Name'] ?? '',
       image: data['Image'] ?? '',
-      productsCount: data['ProductsCount'] ?? 0,
-      isFeatured: data['IsFeatured'] ?? false,
+      // productsCount: data['ProductsCount'] ?? 0,
+      // isFeatured: data['IsFeatured'] ?? false,
     );
   }
 }
