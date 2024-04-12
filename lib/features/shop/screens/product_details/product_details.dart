@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/shop/models/product_model.dart';
 import 'package:shoping_app/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:shoping_app/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:shoping_app/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
@@ -14,18 +15,19 @@ import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/helpers/helper_functions.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  const   ProductDetailsScreen({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
-    final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
       bottomNavigationBar: SBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// 1 Product Image Slider
-            SProductImageSlider(),
+            SProductImageSlider(product: product),
 
             /// 2 Product Details
             Padding(

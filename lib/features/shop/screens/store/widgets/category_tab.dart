@@ -4,6 +4,7 @@ import 'package:shoping_app/common/widgets/brands/brand_show_case.dart';
 import 'package:shoping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/shop/models/product_model.dart';
 import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
@@ -12,6 +13,7 @@ class SCategoryTab extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -29,7 +31,7 @@ class SCategoryTab extends StatelessWidget{
               const SizedBox(height: SSizes.spaceBtwItems),
 
               SGridLayout(itemCount: 4, itemBuilder: (_, index){
-                return const SProductCartVertical();
+                return SProductCartVertical(product: ProductModel.empty());
               })
 
             ],

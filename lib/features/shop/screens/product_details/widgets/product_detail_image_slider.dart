@@ -4,6 +4,8 @@ import 'package:shoping_app/common/widgets/app_bar/app_bar.dart';
 import 'package:shoping_app/common/widgets/custom_shape/curved_edges/curved_edge_widget.dart';
 import 'package:shoping_app/common/widgets/icons/s_circular_icon.dart';
 import 'package:shoping_app/common/widgets/images/s_rounded_image.dart';
+import 'package:shoping_app/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:shoping_app/features/shop/models/product_model.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
@@ -11,9 +13,10 @@ import 'package:shoping_app/utils/helpers/helper_functions.dart';
 
 class SProductImageSlider extends StatelessWidget {
   const SProductImageSlider({
-    super.key,
+    super.key, required this.product,
   });
 
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +39,7 @@ class SProductImageSlider extends StatelessWidget {
                     )),
               ),
             ),
+
 
             Positioned(
               right: 0,
