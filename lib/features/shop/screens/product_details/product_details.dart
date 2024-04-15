@@ -31,7 +31,7 @@ class ProductDetailsScreen extends StatelessWidget {
 
             /// 2 Product Details
             Padding(
-              padding: EdgeInsets.only(right: SSizes.defaultSpace, left: SSizes.defaultSpace, bottom: SSizes.defaultSpace),
+              padding: const EdgeInsets.only(right: SSizes.defaultSpace, left: SSizes.defaultSpace, bottom: SSizes.defaultSpace),
               child: Column(
                 children: [
                   /// - Rating & Share
@@ -67,8 +67,8 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
 
                   /// - Reviews
-                  Divider(),
-                  SizedBox(height: SSizes.spaceBtwSections),
+                  const Divider(),
+                  const SizedBox(height: SSizes.spaceBtwSections),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
