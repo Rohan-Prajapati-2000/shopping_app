@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/search_container.dart';
 import 'package:shoping_app/common/widgets/custom_shape/curved_edges/primary_header_container.dart';
 import 'package:shoping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:shoping_app/common/widgets/shimmers/shimmer.dart';
 import 'package:shoping_app/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
 import 'package:shoping_app/features/shop/controllers/product/product_controller.dart';
 import 'package:shoping_app/features/shop/screens/all_products/all_products.dart';
 import 'package:shoping_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:shoping_app/features/shop/screens/home/widgets/promo_slider.dart';
-import 'package:shoping_app/features/shop/screens/product_details/product_details.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
-import 'package:shoping_app/utils/constants/image_strings.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 
 import 'widgets/home_appbar.dart';

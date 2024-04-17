@@ -37,7 +37,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   /// - Rating & Share
                   SRatingAndShare(),
                   /// - Price, Title, Stock & Brand
-                  SProductMetaData(),
+                  SProductMetaData(product: product,),
                   /// - Attributes
                   SProductsAttributes(),
                   SizedBox(height: SSizes.spaceBtwSections),
