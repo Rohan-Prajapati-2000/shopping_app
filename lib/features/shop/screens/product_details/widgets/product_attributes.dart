@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shoping_app/common/widgets/chips/choice_chips.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/circular_container.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_price_text.dart';
 import 'package:shoping_app/common/widgets/texts/product_tile_text.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/shop/controllers/product/variation_controller.dart';
 import 'package:shoping_app/features/shop/models/product_model.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
@@ -16,10 +18,13 @@ class SProductsAttributes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VariationController());
     final dark = SHelperFunctions.isDarkMode(context);
     return Column(
       children: [
         /// -- Selected Attribute Pricing and Description
+        // Display variation price and stock when some variation is selected
+        if(controller.selectedVariation.value.id.isNotEmpty)
         SRoundedContainer(
           padding: EdgeInsets.all(SSizes.md),
           backgroundColor: dark ? SColors.darkerGrey : SColors.grey,
@@ -88,14 +93,14 @@ class SProductsAttributes extends StatelessWidget {
                       SizedBox(height: SSizes.spaceBtwItems / 2),
                       Wrap(
                         spacing: 8,
-                        children: attribute.values!
-                            .map((value) => SChoiceChip(text: value,selected: false,onSelected: (value){})).toList(),
-                      )
-                    ],
+                        children: attribute.values!.map((attributeValue) {
+                          return SChoiceChip(text: attributeValue, selected: false,onSelected: (value){});
+                        }).toList())
+                    ]
                   ))
               .toList(),
         )
-        
+
       ],
     );
   }

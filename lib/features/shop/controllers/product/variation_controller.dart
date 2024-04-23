@@ -26,8 +26,9 @@ class VariationController extends GetxController {
     );
 
     // Show the selected Variation Image as a main Image
-    if(selectedVariation.image.isNotEmpty){
-      ImageController.instance.selectProductImage.value = selectedVariation.image;
+    if (selectedVariation.image.isNotEmpty) {
+      ImageController.instance.selectProductImage.value =
+          selectedVariation.image;
     }
 
     // Assign Selected Variation
@@ -35,8 +36,6 @@ class VariationController extends GetxController {
 
     // Update selected product variation status
     getProductVariationStockStatus();
-
-
   }
 
   /// Check If selected attribute match any variation attribute
@@ -55,7 +54,19 @@ class VariationController extends GetxController {
 
   /// Check Attribute availability / Stock in Variation
   Set<String?> getAttributeAvaliabilityInVariation(
-      List<ProductVariationModel> variations, String attributeName) {}
+      List<ProductVariationModel> variations, String attributeName) {
+    // Pass the variation to check which attributes is avaliable and stock is not (0)
+    final avaliableVariationAttributesValue = variations
+        .where((variation) =>
+            // Check empty / Out of Stock attributes
+            variation.attributeValues[attributeName] != null &&
+            variation.attributeValues[attributeName]!.isNotEmpty &&
+            variation.stock > 0)
+
+        // Fetch all non-empty attributes of variations
+        .map((variation) => variation.attributeValues[attributeName])
+        .toSet();
+  }
 
   /// Check Product Variation Stock Status
   void getProductVariationStockStatus() {
