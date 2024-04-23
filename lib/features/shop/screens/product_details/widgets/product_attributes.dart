@@ -4,11 +4,16 @@ import 'package:shoping_app/common/widgets/custom_shape/containers/circular_cont
 import 'package:shoping_app/common/widgets/products/product_cards/product_price_text.dart';
 import 'package:shoping_app/common/widgets/texts/product_tile_text.dart';
 import 'package:shoping_app/common/widgets/texts/section_heading.dart';
+import 'package:shoping_app/features/shop/models/product_model.dart';
 import 'package:shoping_app/utils/constants/colors.dart';
 import 'package:shoping_app/utils/constants/sizes.dart';
 import 'package:shoping_app/utils/helpers/helper_functions.dart';
 
 class SProductsAttributes extends StatelessWidget {
+  const SProductsAttributes({super.key, required this.product});
+
+  final ProductModel product;
+
   @override
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
@@ -74,37 +79,24 @@ class SProductsAttributes extends StatelessWidget {
         /// Attributes
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SSectionHeading(title: "Color"),
-            SizedBox(height: SSizes.spaceBtwItems / 2),
-            Wrap(
-              children: [
-                SChoiceChip(text: 'Green', selected: true, onSelected: (value){}),
-                SChoiceChip(text: 'Blue', selected: false, onSelected: (value){}),
-                SChoiceChip(text: 'Yellow', selected: false, onSelected: (value){}),
-              ],
-            )
-          ],
-        ),
-
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SSectionHeading(title: "Size"),
-            SizedBox(height: SSizes.spaceBtwItems / 2),
-            Wrap(
-              spacing: 5,
-              children: [
-                SChoiceChip(text: 'EU 34', selected: true, onSelected: (value){}),
-                SChoiceChip(text: 'EU 36', selected: false, onSelected: (value){}),
-                SChoiceChip(text: 'EU 38', selected: false, onSelected: (value){}),
-              ]
-            )
-          ],
-        ),
-
+          children: product.productAttributes!
+              .map((attribute) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SSectionHeading(
+                          title: attribute.name ?? '', showActionButton: false),
+                      SizedBox(height: SSizes.spaceBtwItems / 2),
+                      Wrap(
+                        spacing: 8,
+                        children: attribute.values!
+                            .map((value) => SChoiceChip(text: value,selected: false,onSelected: (value){})).toList(),
+                      )
+                    ],
+                  ))
+              .toList(),
+        )
+        
       ],
     );
   }
 }
-

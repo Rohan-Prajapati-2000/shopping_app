@@ -74,15 +74,15 @@ class SProductMetaData extends StatelessWidget {
           children: [
             SCircularImage(
                 image: product.brand != null ? product.brand!.image : '',
-                height: 30,
-                width: 30,
+                height: 40,
+                width: 90,
                 overlayColor: dark ? SColors.white : SColors.black),
             const SizedBox(width: SSizes.spaceBtwItems / 2),
             SBrandTitleWithVerifiedIcon(
                 title: product.brand != null ? product.brand!.name : '', brandTextSize: TextSizes.medium)
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwItems)
+        const SizedBox(height: SSizes.spaceBtwItems)
       ],
     );
   }
