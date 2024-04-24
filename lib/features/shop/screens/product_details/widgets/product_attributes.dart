@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:shoping_app/common/widgets/chips/choice_chips.dart';
 import 'package:shoping_app/common/widgets/custom_shape/containers/circular_container.dart';
 import 'package:shoping_app/common/widgets/products/product_cards/product_price_text.dart';
@@ -20,88 +21,123 @@ class SProductsAttributes extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(VariationController());
     final dark = SHelperFunctions.isDarkMode(context);
-    return Column(
-      children: [
-        /// -- Selected Attribute Pricing and Description
-        // Display variation price and stock when some variation is selected
-        if(controller.selectedVariation.value.id.isNotEmpty)
-        SRoundedContainer(
-          padding: EdgeInsets.all(SSizes.md),
-          backgroundColor: dark ? SColors.darkerGrey : SColors.grey,
-          child: Column(
-            children: [
-              /// Title Price and Stock Status
-              Row(
+    return Obx(
+      () => Column(
+        children: [
+          /// -- Selected Attribute Pricing and Description
+          // Display variation price and stock when some variation is selected
+          if (controller.selectedVariation.value.id.isNotEmpty)
+            SRoundedContainer(
+              padding: EdgeInsets.all(SSizes.md),
+              backgroundColor: dark ? SColors.darkerGrey : SColors.grey,
+              child: Column(
                 children: [
-                  SSectionHeading(title: 'Variation', showActionButton: false),
-                  SizedBox(width: SSizes.spaceBtwItems),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          SProductTitleText(title: 'Price : ', smallSize: true),
-
-                          /// Actual Price
-                          Text('\$ 25',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .apply(
-                                      decoration: TextDecoration.lineThrough)),
-                          SizedBox(width: SSizes.spaceBtwItems),
-
-                          /// Sale Price
-                          SProductPriceText(price: '20')
-                        ],
-                      ),
-
-                      /// Stock
-                      Row(
-                        children: [
-                          SProductTitleText(title: 'Stock : ', smallSize: true),
-                          Text('In Stock',
-                              style: Theme.of(context).textTheme.titleMedium),
-                        ],
-                      )
-                    ],
-                  ),
-                ],
-              ),
-
-              ///Variation Description
-              SProductTitleText(
-                title:
-                    'This is the Description of the product and it can go to max 4 line.',
-                smallSize: true,
-                maxLine: 4,
-              )
-            ],
-          ),
-        ),
-        SizedBox(height: SSizes.spaceBtwItems),
-
-        /// Attributes
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: product.productAttributes!
-              .map((attribute) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  /// Title Price and Stock Status
+                  Row(
                     children: [
                       SSectionHeading(
-                          title: attribute.name ?? '', showActionButton: false),
-                      SizedBox(height: SSizes.spaceBtwItems / 2),
-                      Wrap(
-                        spacing: 8,
-                        children: attribute.values!.map((attributeValue) {
-                          return SChoiceChip(text: attributeValue, selected: false,onSelected: (value){});
-                        }).toList())
-                    ]
-                  ))
-              .toList(),
-        )
+                          title: 'Variation', showActionButton: false),
+                      SizedBox(width: SSizes.spaceBtwItems),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              SProductTitleText(
+                                  title: 'Price : ', smallSize: true),
 
-      ],
+                              /// Actual Price
+                              if (controller.selectedVariation.value.salePrice >
+                                  0)
+                                Text(
+                                    '\$ ${controller.selectedVariation.value.price}',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleSmall!
+                                        .apply(
+                                            decoration:
+                                                TextDecoration.lineThrough)),
+                              SizedBox(width: SSizes.spaceBtwItems),
+
+                              /// Sale Price
+                              SProductPriceText(
+                                  price: controller.getVariationPrice())
+                            ],
+                          ),
+
+                          /// Stock
+                          Row(
+                            children: [
+                              SProductTitleText(
+                                  title: 'Stock : ', smallSize: true),
+                              Text(controller.variationStockStatus.value,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+
+                  ///Variation Description
+                  Obx(
+                  ()=> SProductTitleText(
+                      title: controller.selectedVariation.value.description ?? 'Description not found',
+                      smallSize: true,
+                      maxLine: 4,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          SizedBox(height: SSizes.spaceBtwItems),
+
+          /// Attributes
+          Obx(
+            () => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: product.productAttributes!
+                  .map((attribute) => Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SSectionHeading(
+                                title: attribute.name ?? '',
+                                showActionButton: false),
+                            SizedBox(height: SSizes.spaceBtwItems / 2),
+                            Wrap(
+                                spacing: 8,
+                                children:
+                                    attribute.values!.map((attributeValue) {
+                                  final isSelected = controller
+                                          .selectedAttributes[attribute.name] ==
+                                      attributeValue;
+                                  final available = controller
+                                      .getAttributeAvaliabilityInVariation(
+                                          product.productVariations!,
+                                          attribute.name!)
+                                      .contains(attributeValue);
+
+                                  return SChoiceChip(
+                                      text: attributeValue,
+                                      selected: isSelected,
+                                      onSelected: available
+                                          ? (selected) {
+                                              if (selected && available) {
+                                                controller.onAttributeSelected(
+                                                    product,
+                                                    attribute.name ?? '',
+                                                    attributeValue);
+                                              }
+                                            }
+                                          : null);
+                                }).toList())
+                          ]))
+                  .toList(),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

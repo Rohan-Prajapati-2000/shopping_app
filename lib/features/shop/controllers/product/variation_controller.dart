@@ -56,7 +56,7 @@ class VariationController extends GetxController {
   Set<String?> getAttributeAvaliabilityInVariation(
       List<ProductVariationModel> variations, String attributeName) {
     // Pass the variation to check which attributes is avaliable and stock is not (0)
-    final avaliableVariationAttributesValue = variations
+    final availableVariationAttributesValue = variations
         .where((variation) =>
             // Check empty / Out of Stock attributes
             variation.attributeValues[attributeName] != null &&
@@ -66,7 +66,14 @@ class VariationController extends GetxController {
         // Fetch all non-empty attributes of variations
         .map((variation) => variation.attributeValues[attributeName])
         .toSet();
+
+    return availableVariationAttributesValue;
   }
+
+  String getVariationPrice(){
+    return (selectedVariation.value.price > 0 ? selectedVariation.value.salePrice : selectedVariation.value.price).toString();
+  }
+
 
   /// Check Product Variation Stock Status
   void getProductVariationStockStatus() {
