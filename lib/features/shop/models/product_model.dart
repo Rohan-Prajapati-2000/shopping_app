@@ -68,7 +68,7 @@ class ProductModel {
   }
 
   ///  Map Json oriented document snapshot from Firebase to model
-  factory ProductModel.fromSnapshot(
+  factory ProductModel.fromQuerySnapshot(
       DocumentSnapshot<Map<String, dynamic>> documentSnapshot) {
 
     if(documentSnapshot.data() == null) return ProductModel.empty();
